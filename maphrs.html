@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Web Map from Spreadsheet</title>
+  <title>Web Map with Leaflet and Sheety Data</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <style>
     #map {
@@ -14,26 +16,26 @@
 
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script>
-    var map = L.map('map').setView([-3.078492, 115.130560], 12); // Koordinat awal dan zoom level
+    var map = L.map('map').setView([-6.2088, 106.8456], 13); // Set view to Jakarta with zoom 13
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    var spreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1VbUlHTAKbYS98N9niBqkNK4Vu2pqpwvf72cGZJZwEDU/edit?usp=sharing'; // Ganti dengan URL spreadsheet Anda
+    var sheetyAPIURL = 'https://api.sheety.co/810a63a0f6503e6ebf56eb19d612a97a/maphrs/sheet1'; // Replace with your Sheety API URL
 
-    fetch(spreadsheetUrl)
-      .then(function(response) {
-        return response.text();
+    // Fetch data from Sheety API
+    fetch(sheetyAPIURL)
+      .then(response => response.json())
+      .then(data => {
+        data.forEach(entry => {
+          var lat = parseFloat(entry.latitude);
+          var lon = parseFloat(entry.longitude);
+          var marker = L.marker([lat, lon]).addTo(map);
+        });
       })
-      .then(function(data) {
-        var rows = data.split('\n');
-        for (var i = 1; i < rows.length; i++) {
-          var columns = rows[i].split(',');
-          var lat = parseFloat(columns[0]);
-          var lng = parseFloat(columns[1]);
-          var marker = L.marker([lat, lng]).addTo(map);
-        }
+      .catch(error => {
+        console.error('Error fetching data:', error);
       });
   </script>
 </body>
