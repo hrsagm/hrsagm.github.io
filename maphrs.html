@@ -34,11 +34,11 @@
       .then(response => response.json())
       .then(data => {
         data.values.forEach(entry => {
-          var lat = entry[1];
-          var lon = entry[2];
+          var lat = entry[1].replace(',', '.');
+          var lon = entry[2].replace(',', '.');;
           var al = entry[3]; // Get additional info from the third column
-		  var fleet = entry[4]; // Get additional info from the third column
-		  var seam = entry[5]; // Get additional info from the third column
+	  var fleet = entry[4]; // Get additional info from the third column
+	  var seam = entry[5]; // Get additional info from the third column
           var marker = L.marker([lat, lon]).addTo(map);
           
           var content = `AL: ${al}<br>Fleet: ${fleet}<br>Seam: ${seam}<br><br><br>Latitude: ${lat}<br>Longitude: ${lon}<br>`;
