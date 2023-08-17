@@ -1,55 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Web Map with Leaflet</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <style>
     #map {
-      height: 500px;
+      height: 400px;
     }
   </style>
 </head>
 <body>
-  <div id="map"></div>
 
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.6.2/proj4.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<div id="map"></div>
 
-  <script>
-    // Define UTM projection parameters for Zone 50 South
-    var utmProjection = '+proj=utm +zone=50 +south +datum=WGS84 +units=m +no_defs';
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+  var map = L.map('map').setView([-3.078492, 115.130560], 12); // Set initial view coordinates and zoom level
 
-    var map = L.map('map').setView([-3.078492, 115.130560], 12); // Set initial map center and zoom
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+  // Sample data from a Google Spreadsheet
+  var data = [
+    { name: "Location 1", lat: 40.7128, lon: -74.0060 },
+    { name: "Location 2", lat: 34.0522, lon: -118.2437 },
+    { name: "Location 3", lat: 51.5074, lon: -0.1278 }
+    // Add more data as needed
+  ];
 
-    var dataUrl = "https://docs.google.com/spreadsheets/d/1834wsMcpxIUZZQoj5WP77RoyuxP6OwnGT48cWqiJGEg/edit?usp=sharing"; // Replace with your Google Sheet sharing link
+  data.forEach(function(marker) {
+    var popupContent = "<b>" + marker.name + "</b><br>Latitude: " + marker.lat + "<br>Longitude: " + marker.lon;
+    L.marker([marker.lat, marker.lon]).addTo(map)
+      .bindPopup(popupContent);
+  });
+</script>
 
-    $.ajax({
-      url: dataUrl,
-      dataType: "text",
-      success: function(data) {
-        var rows = data.split("\n");
-        for (var i = 1; i < rows.length; i++) {
-          var cols = rows[i].split(",");
-          var utmEasting = parseFloat(cols[0]);
-          var utmNorthing = parseFloat(cols[1]);
-          var height = parseFloat(cols[2]);
-
-          // Perform UTM to geographic coordinate conversion
-          var geographicCoords = proj4(utmProjection, '+proj=longlat +datum=WGS84', [utmEasting, utmNorthing]);
-          var lat = geographicCoords[1];
-          var lng = geographicCoords[0];
-
-          var marker = L.marker([lat, lng]).addTo(map);
-          marker.bindPopup("<h3>Marker " + i + "</h3><p>Latitude: " + lat + "<br>Longitude: " + lng + "<br>Height: " + height + "</p>");
-        }
-      }
-    });
-  </script>
 </body>
 </html>
