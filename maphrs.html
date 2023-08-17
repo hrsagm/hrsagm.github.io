@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Web Map with Leaflet and Sheety Data</title>
+  <title>Web Map with Leaflet and Google Sheets API</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
@@ -16,22 +16,43 @@
 
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script>
-    var map = L.map('map').setView([-6.2088, 106.8456], 13); // Set view to Jakarta with zoom 13
+    var map = L.map('map').setView([-3.078556, 115.130501], 16); // Set view to Jakarta with zoom 13
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    L.tileLayer('http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    var sheetyAPIURL = 'https://api.sheety.co/810a63a0f6503e6ebf56eb19d612a97a/maphrs/sheet1'; // Replace with your Sheety API URL
+    // Replace with your API key and spreadsheet ID
+    var apiKey = 'AIzaSyAfEnl99w7vN1qQ7XzVi0F0vQzF1cAIFKE';
+    var spreadsheetId = '1OUi8YVr4Q5B_rsmG0VFjmRSUM5DFqreyXBfW4SkYfjM';
+    var range = 'Data!A4:F'; // Update range to include the third column
 
-    // Fetch data from Sheety API
-    fetch(sheetyAPIURL)
+    var url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`;
+
+    // Fetch data from Google Sheets API
+    fetch(url)
       .then(response => response.json())
       .then(data => {
-        data.forEach(entry => {
-          var lat = parseFloat(entry.latitude);
-          var lon = parseFloat(entry.longitude);
+        data.values.forEach(entry => {
+          var lat = entry[1];
+          var lon = entry[2];
+          var al = entry[3]; // Get additional info from the third column
+		  var fleet = entry[4]; // Get additional info from the third column
+		  var seam = entry[5]; // Get additional info from the third column
           var marker = L.marker([lat, lon]).addTo(map);
+          
+          var content = `AL: ${al}<br>Fleet: ${fleet}<br>Seam: ${seam}<br><br><br>Latitude: ${lat}<br>Longitude: ${lon}<br>`;
+          marker.bindPopup(content);
+
+          // Add mouseover event to each marker
+          marker.on('mouseover', function() {
+            this.openPopup();
+          });
+
+          // Add mouseout event to each marker
+          marker.on('mouseout', function() {
+            this.closePopup();
+          });
         });
       })
       .catch(error => {
