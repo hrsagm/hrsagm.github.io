@@ -15,7 +15,7 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
         // Initialize the map
-        var map = L.map('map').setView([0, 0], 2);
+        var map = L.map('map').setView([-3.078507, 115.130546], 2);
 
         // Add a tile layer
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -24,7 +24,7 @@
         }).addTo(map);
 
         // URL of your Google Spreadsheet CSV export
-        var spreadsheetUrl = 'https://doc-10-3s-sheets.googleusercontent.com/export/1pqq0p2n0en6k4hhrgj47vtidc/68bqlk0gp2aojt3j97f67bco4c/1692236940000/112539892410179987665/112539892410179987665/1834wsMcpxIUZZQoj5WP77RoyuxP6OwnGT48cWqiJGEg?format=csv&id=1834wsMcpxIUZZQoj5WP77RoyuxP6OwnGT48cWqiJGEg&gid=0&dat=AAt6Q5VF-vGeBL3lUe2tsJSMyXXnnWcVIBkNjNxOeXLHkrPU504l18jVr1S0yJisoDo0NCKoVrpoG-onCE19ORdPt-S2kpvs2t6TKa2Xl-VTqEepY-5wt6FdDE9tUTjXPJz_IjbXU6QfR5Z4-Sxyc8YN1OjSbsqMWctstRtOIXGx56b4GXw7A38SBJmrERINR3ykFEBo4QlP_e_DGr7cX6-64vAQFUwOWS9DzqMOwUoHm-6v4MJISJLa66Pb3JfV2WOpaRGn39kJaORyVrBpZf8No6bmi-JvYvTuDNNg6Dygj7au40yY4oFKdQb8cFw-1b43Pvu0COQyMx1k6GLwmiCrwIs-WhV6ycglrU9kbuaAYhWJYvf3-YJCdsLQIOxM581olRyNQ07Ju9M306dDy6mDVY-fzrooNFGMXt4mqmq2WUtSabJSJeujvAAborSMHiliTsxSB9iASA3Trj_qCOD9klEGSlY1qg8P-u9tB7CNW9SdqWZU5rDbfkmWejcrbo6RceqeM6Bot6LxXyiwmxF2irGH1IAj4Xjn-XgO4okjkCkdAQxDPn_C8KPQZzY_xjVcjMKFxYMeUOxyjKcKU4iI40C4JCdQFBsB1m279TsZ60yFSpZAO6ogXPP7_ltDBwH9IFWmUVTYNEBlrIUTczpZzpMLotzBaIj9v-zhW_INyRsHfUyZ0ErIOBsxLKibhRo2QIaki3iGXqATOuS6fEsHjUbmABS8f2mSOyGY5oaulYVYUx-9sU-L5a57PIC7zPkVioo82pR8gq-MLIz8KURIv3t2f0IeOE3KRYHevrtPLA9o4UA9nsBfqq8_1GwRW7sm0uazFVN4XhoCJPwF258arnSHax64vjpHNGYgcMsX_rcOgt5tpmFK5x0oIq1LDdXTCulh7vBtLRoiTcrVse_U_0wzLQ97JcLYgMJmp-nneSxws49_Ss-2mDirO7PwN49LJpsOFuY6RHuZpPKbRpueLvQWLkH53s0MjzHoKXyOBiXT2Ys';
+        var spreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1834wsMcpxIUZZQoj5WP77RoyuxP6OwnGT48cWqiJGEg/edit?usp=sharing';
 
         // Fetch data from the spreadsheet
         fetch(spreadsheetUrl)
