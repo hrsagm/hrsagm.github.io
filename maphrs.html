@@ -15,7 +15,10 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
         // Initialize the map
-        var map = L.map('map').setView([115.130546, -3.078507], 5);
+        var map = L.map('map', {
+        center: [115.130546, -3.078507],
+        zoom: 13
+        });
 
         // Add a tile layer
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
