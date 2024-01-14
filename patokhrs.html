@@ -1,1 +1,18 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+<title>Patok HRS AGM</title>
+<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
+</head>
+<body>
+<a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
+    <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
+    <a-entity material='color: red' geometry='primitive: triangle' gps-new-entity-place="latitude: -3.0956133032252384; longitude: 115.12905105819247" scale="20 20 20"></a-entity>
+    <a-entity material='color: red' geometry='primitive: triangle' gps-new-entity-place="latitude: -3.0958391028188026; longitude: 115.12890674206551" scale="20 20 20"></a-entity>
+    <a-entity material='color: blue' geometry='primitive: triangle' gps-new-entity-place="latitude: -3.0959203868293117; longitude: 115.1288526294493" scale="20 20 20"></a-entity>
+    <a-entity material='color: blue' geometry='primitive: triangle' gps-new-entity-place="latitude: -3.096146186343463; longitude: 115.12870831321578" scale="20 20 20"></a-entity>
+</a-scene>
+</body>
+</html>
