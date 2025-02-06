@@ -1,0 +1,280 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Fauzan &amp; Nawang Wedding Invitation
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Netflix+Sans:wght@400;700&amp;family=Roboto:wght@400;700&amp;family=Liga+Gothic&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Netflix Sans', sans-serif;
+        }
+        .animate-bounce {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        .fade-out {
+            animation: fadeOut 1s forwards;
+        }
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        .fade-in {
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+  </style>
+ </head>
+ <body class="bg-black text-white">
+  <div class="relative h-screen flex flex-col justify-end items-center" id="greeting-page">
+   <img alt="Fauzan &amp; Nawang" class="absolute inset-0 w-full h-full object-cover z-0" height="800" src="fn_greeting.jpg" width="600"/>
+   <div class="absolute inset-0 bg-black opacity-50 z-10">
+   </div>
+   <div class="relative z-20 p-6 text-center w-full">
+    <div class="text-red-500 text-lg font-bold text-left">
+     Wedding Invitation
+    </div>
+    <div class="text-3xl font-bold mt-2 text-left">
+     Fauzan &amp; Nawang :
+    </div>
+    <div class="text-3xl font-bold text-left">
+     Sebelum Hari H
+    </div>
+    <div class="flex items-center justify-start mt-4">
+     <span class="bg-red-600 text-white text-sm font-bold py-1 px-3 rounded-full">
+      Coming soon
+     </span>
+     <span class="text-sm ml-3">
+      4 Mei 2025
+     </span>
+    </div>
+    <div class="flex justify-center mt-4 space-x-2">
+     <span class="bg-gray-700 text-white text-xs py-1 px-3 rounded-full">
+      #romantic
+     </span>
+     <span class="bg-gray-700 text-white text-xs py-1 px-3 rounded-full">
+      #getmarried
+     </span>
+     <span class="bg-gray-700 text-white text-xs py-1 px-3 rounded-full">
+      #family
+     </span>
+     <span class="bg-gray-700 text-white text-xs py-1 px-3 rounded-full">
+      #documenter
+     </span>
+    </div>
+    <div class="mt-6">
+     <i class="fas fa-chevron-up text-white text-xl animate-bounce">
+     </i>
+    </div>
+    <div class="mt-2">
+     <button class="bg-white text-black text-lg font-bold py-2 px-4 rounded-full" id="open-invitation">
+      Buka Undangan
+     </button>
+    </div>
+   </div>
+  </div>
+  <div class="hidden fade-in" id="main-page">
+   <div class="max-w-screen-md mx-auto p-4">
+    <!-- Movie Section -->
+    <div class="mb-8">
+     <video autoplay="" class="w-full mb-4" height="400" id="wedding-video" src="kitausahakan.mp4" width="600">
+      Your browser does not support the video tag.
+     </video>
+     <div class="text-red-600 text-sm font-bold">
+      DOCUMENTER
+     </div>
+     <h1 class="text-3xl font-bold mb-2">
+      Fauzan &amp; Nawang: Sebelum Hari H
+     </h1>
+     <div class="flex items-center text-green-500 text-sm mb-2">
+      <span>
+       100% match
+      </span>
+      <span class="text-white mx-2">
+       SU
+      </span>
+      <span>
+       2025
+      </span>
+      <span class="mx-2">
+       1h 26m
+      </span>
+      <i class="fas fa-closed-captioning mx-2">
+      </i>
+     </div>
+     <div class="bg-red-600 text-white text-sm font-bold px-2 py-1 inline-block mb-4">
+      Coming soon on Ahad, 4 Mei 2025
+     </div>
+     <p class="mb-4">
+      Setelah Fauzan dan Nawang dipertemukan dalam situasi yang tepat, di mana keduanya telah siap untuk memulai hubungan bersama, tibalah mereka di awal perjalanan baru menuju pernikahan.
+     </p>
+     <p class="italic text-gray-400 mb-4">
+      "Segala sesuatu Kami ciptakan berpasang-pasangan agar kamu mengingat (kebesaran Allah)" (Q.S Az-Zariyah: 49)
+     </p>
+    </div>
+    <!-- Breaking News Section -->
+    <div>
+     <h2 class="text-2xl font-bold mb-4">
+      Breaking News
+     </h2>
+     <img alt="Fauzan &amp; Nawang" class="w-full" height="400" src="fn_breaking.jpg" width="600"/>
+    </div>
+    <!-- Additional Content -->
+    <div class="max-w-2xl mx-auto mt-8">
+     <p class="mb-4 text-justify" style="font-family: 'Liga Gothic', sans-serif; font-size: 16px; color: rgb(255, 255, 255);">
+      Halo! Karena kalian adalah orang penting yang mengisi hari-hari kami, kami ingin informasikan bahwa kami akan segera menikah!
+      <i class="fas fa-heart text-white">
+      </i>
+     </p>
+     <p class="mb-4 text-justify" style="font-family: 'Liga Gothic', sans-serif; font-size: 16px; color: rgb(255, 255, 255);">
+      Tapi sebelumnya, kami mohon maaf kepada teman dan kerabat semua karena tidak bisa mengundang kalian hadir di hari bahagia kami, dikarenakan pernikahan kami bersifat intimate wedding yang dilaksanakan di Salatiga dan hanya dihadiri oleh keluarga dan orang terdekat.
+     </p>
+     <p class="mb-4 text-justify" style="font-family: 'Liga Gothic', sans-serif; font-size: 16px; color: rgb(255, 255, 255);">
+      Walaupun begitu, kami harapkan sebaik-baiknya doa untuk kelancaran pernikahan dan hari-hari bahagia setelahnya.
+     </p>
+     <p class="mb-4 text-justify">
+      Dengan penuh cinta,
+      <br/>
+      Fauzan dan Nawang
+      <i class="fas fa-heart text-white">
+      </i>
+     </p>
+     <h2 class="text-xl font-bold mt-8 mb-4">
+      Bride and Groom
+     </h2>
+     <div class="flex flex-col sm:flex-row justify-between gap-4">
+      <div class="text-center">
+       <img alt="Muhammad Fauzan Tanjung" class="rounded-lg mx-auto mb-2" height="150" src="fn_fauzan.jpg" width="150"/>
+       <p class="font-bold">
+        Muhammad Fauzan Tanjung
+       </p>
+       <p>
+        Putra dari Bapak Donal Edison &amp; Ibu Marjani Nur
+       </p>
+      </div>
+      <div class="text-center">
+       <img alt="Nawang Ajeng Haksoro" class="rounded-lg mx-auto mb-2" height="150" src="fn_nawang.jpg" width="150"/>
+       <p class="font-bold">
+        Nawang Ajeng Haksoro
+       </p>
+       <p>
+        Putri dari Bapak Handoyo Bontot Sidi Haksoro &amp; Ibu Mujiatun
+       </p>
+      </div>
+     </div>
+     <h2 class="text-xl font-bold mt-8 mb-4">
+      Our Love Story
+     </h2>
+     <div class="flex items-center">
+      <img alt="Couple lying on grass" class="rounded-lg mr-4" height="171" src="EOSR1542.jpg" width="300"/>
+      <div>
+        <h2 class="text-xl font-bold">
+         Episode 1: How We Met Each Other that Time
+        </h2>
+        <p class="text-gray-400">
+         26m 10s
+        </p>
+      </div>
+     </div>
+     <div class="space-y-6 mt-8">
+      <div>
+       <p>
+        Fauzan dan Nawang pertama kali bertemu sebagai rekan kerja di kantor yang sama. Kegiatan-kegiatan kecil kantor yang sering melibatkan orang-orang didalamnya membuat mereka semakin dekat.
+       </p>
+      </div>
+     <div class="flex items-center">
+      <img alt="Couple lying on grass" class="rounded-lg mr-4" height="171" src="EOSR1870.jpg" width="300"/>
+      <div>
+        <h2 class="text-xl font-bold">
+         Episode 2: A Love That Grows With Time
+        </h2>
+        <p class="text-gray-400">
+         26m 10s
+        </p>
+       </div>
+      </div>
+      <p>
+       Hari demi hari terlewati, sampai akhirnya mereka menyadari bahwa perasaan yang mereka miliki satu sama lain bukan sebatas rekan kerja belaka, melainkan cinta yang tumbuh seiring waktu.
+      </p>
+     <div class="flex items-center">
+      <img alt="Couple lying on grass" class="rounded-lg mr-4" height="171" src="EOSR1939.jpg" width="300"/>
+      <div>
+        <h2 class="text-xl font-bold">
+         Episode 3: Choose to Spend Life Together
+        </h2>
+        <p class="text-gray-400">
+         26m 10s
+        </p>
+       </div>
+      </div>
+      <p>
+       Seringkali Fauzan memberitahu Nawang bahwa ia tertarik dan ingin menjalani hubungan lebih serius. Sampai akhirnya di 2024, Fauzan mulai memberanikan diri untuk melamar Nawang.
+      </p>
+     <div class="flex items-center">
+      <img alt="Couple lying on grass" class="rounded-lg mr-4" height="171" src="EOSR1749.jpg" width="300"/>
+      <div>
+        <h2 class="text-xl font-bold">
+         [Coming Soon] Final Episode: The Beginning of Forever
+        </h2>
+        <p class="text-gray-400">
+         26m 10s
+        </p>
+       </div>
+      </div>
+      <p>
+       Ketika hari H itu datang, Fauzan dan Nawang akan berbagi kisah haru mereka disini. Sampai bertemu lagi di cerita bahagia selanjutnya!
+      </p>
+     </div>
+     <div class="mt-8">
+      <h2 class="text-2xl font-bold">
+       Our Gallery
+      </h2>
+      <div class="grid grid-cols-3 gap-4 mt-4">
+       <img alt="Gallery image 1" class="w-full h-24 object-cover" height="300" src="EOSR1583.jpg" width="300"/>
+       <img alt="Gallery image 2" class="w-full h-24 object-cover" height="300" src="EOSR1641.jpg" width="300"/>
+       <img alt="Gallery image 3" class="w-full h-24 object-cover" height="300" src="EOSR1771.jpg" width="300"/>
+       <img alt="Gallery image 4" class="w-full h-24 object-cover" height="300" src="EOSR1808.jpg" width="300"/>
+       <img alt="Gallery image 5" class="w-full h-24 object-cover" height="300" src="EOSR1779.jpg" width="300"/>
+       <img alt="Gallery image 6" class="w-full h-24 object-cover" height="300" src="EOSR1823.jpg" width="300"/>
+       <img alt="Gallery image 7" class="w-full h-24 object-cover" height="300" src="EOSR1854.jpg" width="300"/>
+       <img alt="Gallery image 8" class="w-full h-24 object-cover" height="300" src="EOSR1892.jpg" width="300"/>
+       <img alt="Gallery image 9" class="w-full h-24 object-cover" height="300" src="EOSR1910.jpg" width="300"/>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+   document.getElementById('open-invitation').addEventListener('click', function() {
+            document.getElementById('greeting-page').classList.add('fade-out');
+            setTimeout(function() {
+                document.getElementById('greeting-page').classList.add('hidden');
+                document.getElementById('main-page').classList.remove('hidden');
+                document.getElementById('main-page').classList.add('fade-in');
+                document.getElementById('wedding-video').play();
+            }, 1000);
+        });
+  </script>
+ </body>
+</html>
