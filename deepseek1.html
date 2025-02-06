@@ -98,7 +98,7 @@
    <div class="max-w-screen-md mx-auto p-4">
     <!-- Movie Section -->
     <div class="mb-8">
-     <video autoplay="true" class="w-full mb-4" controls="" height="400" id="wedding-video" src="wedding.mp4" width="600">
+     <video autoplay="" class="w-full mb-4" controls="" height="400" id="wedding-video" src="wedding.mp4" width="600">
       Your browser does not support the video tag.
      </video>
      <div class="text-red-600 text-sm font-bold">
@@ -144,13 +144,14 @@
   </div>
   <script>
    document.getElementById('open-invitation').addEventListener('click', function() {
-        document.getElementById('greeting-page').classList.add('fade-out');
-        setTimeout(function() {
-            document.getElementById('greeting-page').classList.add('hidden');
-            document.getElementById('main-page').classList.remove('hidden');
-            document.getElementById('main-page').classList.add('fade-in');
-        }, 1000);
-    });
+            document.getElementById('greeting-page').classList.add('fade-out');
+            setTimeout(function() {
+                document.getElementById('greeting-page').classList.add('hidden');
+                document.getElementById('main-page').classList.remove('hidden');
+                document.getElementById('main-page').classList.add('fade-in');
+                document.getElementById('wedding-video').play();
+            }, 1000);
+        });
   </script>
  </body>
 </html>
