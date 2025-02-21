@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muthi & Abror Wedding Invitation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="landing-page" id="home">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Muthi & Abror</h1>
+            <p>We Are Getting Married</p>
+            <div class="ornament">❦</div>
+            <div class="date">12 • 12 • 2025</div>
+            <button class="open-invitation" onclick="openInvitation()">
+                <i class="fas fa-envelope"></i>
+                Open Invitation
+            </button>
+        </div>
+    </div>
+
+    <div class="main-content hidden">
+        <section class="couple-section">
+            <div class="ornament">❦</div>
+            <h2>The Wedding Of</h2>
+            <div class="couple-names">
+                <h1>Muthi & Abror</h1>
+                <p class="couple-subtitle">Together with joyful hearts and the grace of God,<br>we invite you to share in our celebration of love</p>
+            </div>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span id="days">00</span>
+                    <p>Days</p>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours">00</span>
+                    <p>Hours</p>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes">00</span>
+                    <p>Minutes</p>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds">00</span>
+                    <p>Seconds</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="event-details">
+            <div class="ceremony-card">
+                <div class="ornament">❦</div>
+                <h3>Akad Nikah</h3>
+                <div class="event-info">
+                    <p><i class="fas fa-calendar"></i> Thursday, 12 December 2025</p>
+                    <p><i class="fas fa-clock"></i> 08:00 WIB</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Grand Ballroom</p>
+                </div>
+            </div>
+            
+            <div class="ceremony-card">
+                <div class="ornament">❦</div>
+                <h3>Wedding Reception</h3>
+                <div class="event-info">
+                    <p><i class="fas fa-calendar"></i> Thursday, 12 December 2025</p>
+                    <p><i class="fas fa-clock"></i> 11:00 WIB</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Grand Ballroom</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <div class="ornament">❦</div>
+            <h2>Our Moments</h2>
+            <p class="gallery-subtitle">Cherished memories that will last forever</p>
+            <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600" alt="Couple Photo 1">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600" alt="Couple Photo 2">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=600" alt="Couple Photo 3">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600" alt="Couple Photo 4">
+            </div>
+            </div>
+        </section>
+
+        <section class="rsvp">
+            <div class="ornament">❦</div>
+            <h2>RSVP</h2>
+            <p class="rsvp-subtitle">We would be honored by your presence on our special day</p>
+            <form id="rsvpForm">
+                <input type="text" placeholder="Your Name" required>
+                <select required>
+                    <option value="">Will you attend?</option>
+                    <option value="yes">Yes, I will attend</option>
+                    <option value="no">Sorry, I can't attend</option>
+                </select>
+                <input type="number" placeholder="Number of Guests" required>
+                <button type="submit">Send RSVP</button>
+            </form>
+        </section>
+
+        <section class="location">
+            <div class="ornament">❦</div>
+            <h2>Location</h2>
+            <p class="location-subtitle">Join us in celebrating our love story</p>
+            <div class="map">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6664672365994!2d106.8164290147711!3d-6.175392395527974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sMonumen%20Nasional!5e0!3m2!1sen!2sid!4v1627894592953!5m2!1sen!2sid" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
